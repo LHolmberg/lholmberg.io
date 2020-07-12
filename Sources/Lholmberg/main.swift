@@ -114,4 +114,4 @@ extension Theme {
     }
 }
 
-try LHolmberg().publish(withTheme: .LHTheme)
+try LHolmberg().publish(withTheme: .LHTheme, deployedUsing: .gitHub("LHolmberg/lholmberg.github.io", useSSH: true))
