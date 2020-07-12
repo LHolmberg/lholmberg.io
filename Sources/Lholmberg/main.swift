@@ -15,40 +15,19 @@ struct LHolmberg: Website {
     var imagePath: Path? { nil }
 }
 
-// Data for each project on /projects
-struct ProjectData {
-    private(set) var title: Node<HTML.BodyContext>
-    private(set) var img: String
-    private(set) var desc: Node<HTML.BodyContext>
-    
-    init(title: Node<HTML.BodyContext>, img: String, desc: Node<HTML.BodyContext>) {
-        self.title = title
-        self.img = img
-        self.desc = desc
-    }
-}
-
-// Allows me to sequentially create n amounts of html (project) elements
+// allows me to sequentially create n amounts of html (project) elements
 private extension Node where Context == HTML.BodyContext {
     static func projectList<T: Website>(for item: ProjectData, on site: T) -> Node {
         return .div(.class("thecard"),
-            .div(.class("card-img"), .img(.src(item.img))),
+                    .div(.class("card-img"), .img(.src(item.img1)), .img(.src(item.img2)), .img(.src(item.img3))),
             .div(.class("card-caption"),
-                .i(.id("like-btn"), .class("fa fa-thumbs-o-up"), .a("More Info", .href("https://github.com/LHolmberg/job-finder"), .target(HTMLAnchorTarget.blank))),
+                 .i(.id("like-btn"), .class("fa fa-thumbs-o-up"), .a("GitHub", .href(item.link), .target(HTMLAnchorTarget.blank))),
                 .h1(item.title),
                 .p(item.desc)
             )
         )
     }
 }
-
-
-// Hard coded info about my projects, no need for a database.
-let projectsData: [ProjectData] = [
-    ProjectData(title: "Job Finder", img: "../jobfinder_home1.png", desc: "iOS application that allows people who are looking for a quick job (e.g. mow someone’s lawn) to easily find available jobs in the vicinity. If you are someone that is looking to hire, you can create a special account that allows you to post jobs."),
-    
-    ProjectData(title: "Tic Tac Toe (Multiplayer)", img: "../tictactoe_home.png", desc: "iOS application that is a multiplayer Tic Tac Toe game. You create an account and then you are able to invite other people to a new game using their created username. Once you have invited a person and they accepted, you can play tic tac toe in real-time.")
-]
 
 struct SiteHTMLFactory<Site: Website>: HTMLFactory {
     // "index.html"
@@ -66,13 +45,14 @@ struct SiteHTMLFactory<Site: Website>: HTMLFactory {
                         .br(),
                         .br(),
                         .a("Projects", .href("projects"), .class("links")),
-                        .a("CV (pdf)", .href("ds"), .class("links"))
+                        .a("CV (pdf)", .href("../LukasHolmberg_CV.pdf"), .class("links"))
                     )
                 )
             )
         )
     }
     // "projects.html"
+    var projectsData = Projects().data
     func makeSectionHTML(for section: Section<Site>, context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .head(for: section, on: context.site),
@@ -80,8 +60,7 @@ struct SiteHTMLFactory<Site: Website>: HTMLFactory {
                 .class("projects"),
                 .div(.class("topnav"), .id("myTopnav"),
                     .a("LHolmberg", .href("/"), .id("logo")),
-                    .a("Projects", .href("/"), .class("active")),
-                    .a("CV", .href("/"))
+                    .a("Projects", .href("/"), .class("active"))
                 ),
                 .h1("Projects", .class("projectsTitle")),
                 .forEach(projectsData) { data in
@@ -111,7 +90,27 @@ struct SiteHTMLFactory<Site: Website>: HTMLFactory {
 
 extension Theme {
     static var LHTheme: Theme {
-        Theme(htmlFactory: SiteHTMLFactory(), resourcePaths: ["Resources/Theme/styles.css", "Resources/Theme/jobfinder_home1.png", "Resources/Theme/tictactoe_home.png"])
+        Theme(htmlFactory: SiteHTMLFactory(), resourcePaths: ["Resources/Theme/styles.css",
+                                                              "Resources/Theme/jobfinder_home1.png",
+                                                              "Resources/Theme/tictactoe_home.png",
+                                                              "Resources/Theme/ifHome.png",
+                                                              "Resources/Theme/lf1.png",
+                                                              "Resources/Theme/vsMain.png",
+                                                              "Resources/Theme/fs1.png",
+                                                              "Resources/Theme/vs1.png",
+                                                              "Resources/Theme/vs2.png",
+                                                              "Resources/Theme/fs2.png",
+                                                              "Resources/Theme/fs3.png",
+                                                              "Resources/Theme/lf3.png",
+                                                              "Resources/Theme/lf5.png",
+                                                              "Resources/Theme/ifFeed.png",
+                                                              "Resources/Theme/ifDrop.png",
+                                                              "Resources/Theme/jobSearcher2.png",
+                                                              "Resources/Theme/jobPoster1.png",
+                                                              "Resources/Theme/ticinvites.png",
+                                                              "Resources/Theme/ticsignin.png",
+                                                              "Resources/Theme/ticinvite.png",
+                                                              "Resources/Theme/LukasHolmberg_CV.pdf"])
     }
 }
 

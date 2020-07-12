@@ -172,26 +172,34 @@ a:hover .thecard {
 }
 
 .card-img {
-  height: 400px;
+  height: 315px;
 }
 
 .card-img img {
   height: auto;
-  width: auto;
-  max-width: 400px;
-  max-height: 407px;
-  margin-left: 180px;
+  width: 33%;
+  max-width: 33%;
+  max-height: 315px;
   border-radius: 4px 4px 0px 0px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 640px) {
   .thecard {
     width: 300px;
   }
-
+  .card-img img:nth-child(2) {
+      display:none;
+  }
+  .card-img img:nth-child(3) {
+      display:none;
+  }
   .card-img img {
-    margin-left: 30px;
-    border-radius: 4px 4px 0px 0px;
+      height: auto;
+      width: auto;
+      max-width: 315px;
+      max-height: 315px;
+      margin-left: 50px;
+      border-radius: 4px 4px 0px 0px;
   }
 }
 
