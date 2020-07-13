@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: publish-cli generate
+      - run: publish generate
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
