@@ -4,7 +4,6 @@
 /.swiftpm
 /*.xcodeproj
 .publish
-/Theme
 
 fs3.png
 index.html
