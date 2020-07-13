@@ -4,6 +4,8 @@
 /.swiftpm
 /*.xcodeproj
 .publish
+/Theme
+
 fs3.png
 index.html
 feed.rss
@@ -27,3 +29,4 @@ tictactoe_home.png
 vs1.png
 vs2.png
 vsMain.png
+LukasHolmberg_CV.pdf
