@@ -17,3 +17,5 @@ jobs:
         with:
           github_token: ${{ secrets.DEPLOYMENT_TOKEN }}
           publish_dir: ./Output
+          user_name: 'LHolmberg'
+          user_email: 'lukazlovicc@hotmail.com'
