@@ -172,14 +172,14 @@ a:hover .thecard {
 }
 
 .card-img {
-  height: 315px;
+  height: 100%;
 }
 
 .card-img img {
   height: auto;
   width: 33%;
   max-width: 33%;
-  max-height: 315px;
+  max-height: 33%;
   border-radius: 4px 4px 0px 0px;
 }
 
