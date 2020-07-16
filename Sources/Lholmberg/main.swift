@@ -87,29 +87,28 @@ struct SiteHTMLFactory<Site: Website>: HTMLFactory {
     }
 }
 
-
 extension Theme {
     static var LHTheme: Theme {
         Theme(htmlFactory: SiteHTMLFactory(), resourcePaths: ["Resources/Theme/styles.css",
-                                                              "Resources/Theme/jobfinder_home1.png",
-                                                              "Resources/Theme/tictactoe_home.png",
-                                                              "Resources/Theme/ifHome.png",
-                                                              "Resources/Theme/lf1.png",
-                                                              "Resources/Theme/vsMain.png",
-                                                              "Resources/Theme/fs1.png",
-                                                              "Resources/Theme/vs1.png",
-                                                              "Resources/Theme/vs2.png",
-                                                              "Resources/Theme/fs2.png",
-                                                              "Resources/Theme/fs3.png",
-                                                              "Resources/Theme/lf3.png",
-                                                              "Resources/Theme/lf5.png",
-                                                              "Resources/Theme/ifFeed.png",
-                                                              "Resources/Theme/ifDrop.png",
-                                                              "Resources/Theme/jobSearcher2.png",
-                                                              "Resources/Theme/jobPoster1.png",
-                                                              "Resources/Theme/ticinvites.png",
-                                                              "Resources/Theme/ticsignin.png",
-                                                              "Resources/Theme/ticinvite.png",
+                                                              "Resources/Theme/Images/jobfinder_home1.png",
+                                                              "Resources/Theme/Images/tictactoe_home.png",
+                                                              "Resources/Theme/Images/ifHome.png",
+                                                              "Resources/Theme/Images/lf1.png",
+                                                              "Resources/Theme/Images/vsMain.png",
+                                                              "Resources/Theme/Images/fs1.png",
+                                                              "Resources/Theme/Images/vs1.png",
+                                                              "Resources/Theme/Images/vs2.png",
+                                                              "Resources/Theme/Images/fs2.png",
+                                                              "Resources/Theme/Images/fs3.png",
+                                                              "Resources/Theme/Images/lf3.png",
+                                                              "Resources/Theme/Images/lf5.png",
+                                                              "Resources/Theme/Images/ifFeed.png",
+                                                              "Resources/Theme/Images/ifDrop.png",
+                                                              "Resources/Theme/Images/jobSearcher2.png",
+                                                              "Resources/Theme/Images/jobPoster1.png",
+                                                              "Resources/Theme/Images/ticinvites.png",
+                                                              "Resources/Theme/Images/ticsignin.png",
+                                                              "Resources/Theme/Images/ticinvite.png",
                                                               "Resources/Theme/LukasHolmberg_CV.pdf"])
     }
 }
