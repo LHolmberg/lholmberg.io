@@ -15,9 +15,7 @@ p {
   vertical-align: baseline;
 }
 
-body {
-  -webkit-text-size-adjust: none;
-}
+body {-webkit-text-size-adjust: none;}
 
 body,
 input,
